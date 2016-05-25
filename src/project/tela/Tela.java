@@ -5,6 +5,9 @@
  */
 package project.tela;
 
+import banco_de_dados.CadastroCRUD;
+import model.Usuario;
+
 /**
  *
  * @author pc
@@ -27,164 +30,115 @@ public class Tela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        TxtCapturaLogin = new javax.swing.JTextField();
         TxtCapturaEmail = new javax.swing.JTextField();
-        TxtCapturaNomeCompleto = new javax.swing.JTextField();
+        TxtCapturaLogin = new javax.swing.JTextField();
         TxtCapturaSenha = new javax.swing.JPasswordField();
         BotaoLogar = new javax.swing.JButton();
-        MarcarDesenvolvedores = new javax.swing.JCheckBox();
-        MarcarScrummaster = new javax.swing.JCheckBox();
-        MarcarTestador = new javax.swing.JCheckBox();
+        TxtCapturaNome = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        usuarioControl = new javax.swing.JMenu();
-        projetoControl = new javax.swing.JMenu();
-        outrasControl = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Cadastro");
         setResizable(false);
 
-        jLabel1.setText("Login");
-
         jLabel2.setText("Senha");
 
         jLabel3.setText("Email");
 
-        jLabel4.setText("Nome Completo");
+        jLabel4.setText("Login");
 
-        TxtCapturaLogin.setText("Digite seu Login");
-        TxtCapturaLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtCapturaLoginActionPerformed(evt);
-            }
-        });
-
-        TxtCapturaEmail.setText("Digite Seu E-mail");
         TxtCapturaEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtCapturaEmailActionPerformed(evt);
             }
         });
 
-        TxtCapturaNomeCompleto.setText("Digite Seu Nome");
+        TxtCapturaLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtCapturaLoginActionPerformed(evt);
+            }
+        });
 
-        TxtCapturaSenha.setText("jPasswordField1");
         TxtCapturaSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtCapturaSenhaActionPerformed(evt);
             }
         });
 
-        BotaoLogar.setText("Logar Usuário");
+        BotaoLogar.setText("Cadastrar");
         BotaoLogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotaoLogarActionPerformed(evt);
             }
         });
 
-        MarcarDesenvolvedores.setText("Desenvolvedores");
-
-        MarcarScrummaster.setText("ScrumMaster");
-        MarcarScrummaster.addActionListener(new java.awt.event.ActionListener() {
+        TxtCapturaNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MarcarScrummasterActionPerformed(evt);
+                TxtCapturaNomeActionPerformed(evt);
             }
         });
 
-        MarcarTestador.setText("Testador");
-        MarcarTestador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MarcarTestadorActionPerformed(evt);
-            }
-        });
-
-        usuarioControl.setText("Usuários");
-        jMenuBar1.add(usuarioControl);
-
-        projetoControl.setText("Projetos");
-        jMenuBar1.add(projetoControl);
-
-        outrasControl.setText("Outras Opções");
-        jMenuBar1.add(outrasControl);
-
+        jLabel5.setText("Nome");
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(TxtCapturaNomeCompleto))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(63, 63, 63)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TxtCapturaEmail)
-                            .addComponent(TxtCapturaLogin)
-                            .addComponent(TxtCapturaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotaoLogar)
+                .addGap(156, 156, 156))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(35, 35, 35)
+                        .addComponent(TxtCapturaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MarcarTestador)
-                            .addComponent(MarcarScrummaster)
-                            .addComponent(MarcarDesenvolvedores))
-                        .addGap(144, 144, 144))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BotaoLogar)
-                        .addGap(107, 107, 107))))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TxtCapturaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtCapturaEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtCapturaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(TxtCapturaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(TxtCapturaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel5)
+                    .addComponent(TxtCapturaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(TxtCapturaLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(TxtCapturaEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(TxtCapturaNomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MarcarDesenvolvedores)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MarcarScrummaster)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
-                .addComponent(MarcarTestador)
+                    .addComponent(jLabel2)
+                    .addComponent(TxtCapturaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotaoLogar)
-                .addGap(19, 19, 19))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void TxtCapturaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCapturaLoginActionPerformed
-        
-    }//GEN-LAST:event_TxtCapturaLoginActionPerformed
 
     private void TxtCapturaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCapturaSenhaActionPerformed
         // TODO add your handling code here:
@@ -195,16 +149,22 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtCapturaEmailActionPerformed
 
     private void BotaoLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLogarActionPerformed
-        // TODO add your handling code here:
+        Usuario usuario = new Usuario();
+        usuario.setLogin(TxtCapturaLogin.getText().toString());
+        usuario.setEmail(TxtCapturaEmail.getText().toString());
+        usuario.setSenha(TxtCapturaSenha.getText().toString());
+        usuario.setNomeCompleto(TxtCapturaNome.getText().toString());
+        CadastroCRUD cRUD = new CadastroCRUD();
+        cRUD.cadastroUsuario(usuario);
     }//GEN-LAST:event_BotaoLogarActionPerformed
 
-    private void MarcarScrummasterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcarScrummasterActionPerformed
+    private void TxtCapturaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCapturaLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MarcarScrummasterActionPerformed
+    }//GEN-LAST:event_TxtCapturaLoginActionPerformed
 
-    private void MarcarTestadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarcarTestadorActionPerformed
+    private void TxtCapturaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCapturaNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MarcarTestadorActionPerformed
+    }//GEN-LAST:event_TxtCapturaNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,20 +204,14 @@ public class Tela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoLogar;
-    private javax.swing.JCheckBox MarcarDesenvolvedores;
-    private javax.swing.JCheckBox MarcarScrummaster;
-    private javax.swing.JCheckBox MarcarTestador;
     private javax.swing.JTextField TxtCapturaEmail;
     private javax.swing.JTextField TxtCapturaLogin;
-    private javax.swing.JTextField TxtCapturaNomeCompleto;
+    private javax.swing.JTextField TxtCapturaNome;
     private javax.swing.JPasswordField TxtCapturaSenha;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu outrasControl;
-    private javax.swing.JMenu projetoControl;
-    private javax.swing.JMenu usuarioControl;
     // End of variables declaration//GEN-END:variables
 }

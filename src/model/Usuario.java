@@ -16,6 +16,10 @@ public class Usuario {
         this.email = email;
         this.nomeCompleto = nomeCompleto;
     }
+
+    public Usuario() {
+        
+    }
         
 
     public long getId() {
@@ -56,6 +60,11 @@ public class Usuario {
 
     public void setNomeCompleto(String nomeCompleto) {
         this.nomeCompleto = nomeCompleto;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", login=" + login + ", senha=" + senha + ", email=" + email + ", nomeCompleto=" + nomeCompleto + '}';
     }
     
     
