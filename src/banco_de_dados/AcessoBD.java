@@ -65,7 +65,7 @@ public class AcessoBD  {
     
 	
 	private String driver = "com.mysql.jdbc.Driver";
-	private String caminho = "jdbc:mysql://127.0.0.1/aula";// MYDB é o nome do provavel banco
+	private String caminho = "jdbc:mysql://127.0.0.1/aula1";// MYDB é o nome do provavel banco
 	private String usuario = "root";
 	private String senha = "12091996";
 	public static Connection conn = null;
