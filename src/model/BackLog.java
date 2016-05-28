@@ -1,8 +1,7 @@
 package model;
 
 public class BackLog {
-    
-     private long id;
+    private long id;
     private String dataDeCriacao;
     private String dataUltimaModificacao;
     private int id_projeto;
@@ -38,6 +37,4 @@ public class BackLog {
     public void setId_projeto(int id_projeto) {
         this.id_projeto = id_projeto;
     }
-    
-
 }
