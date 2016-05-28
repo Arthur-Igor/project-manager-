@@ -11,4 +11,15 @@ package control;
  */
 public class BackLogControl {
     
+      private static BackLogControl controladorBacklog;
+    
+    //singleton
+    public static BackLogControl getInstance(){
+        if(controladorBacklog == null){
+            controladorBacklog = new BackLogControl();
+            return controladorBacklog;
+        }
+        return controladorBacklog;
+    }
+    
 }
