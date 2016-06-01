@@ -4,6 +4,14 @@
  * and open the template in the editor.
  */
 package project.tela;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+
+import banco_de_dados.CadastroProjetoCRUD;
+
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -15,6 +23,8 @@ public class Projeto extends javax.swing.JFrame {
      * Creates new form Projeto
      */
     public Projeto() {
+    	setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
+    	setTitle("Projeto");
         initComponents();
     }
 
@@ -32,6 +42,16 @@ public class Projeto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		CadastroProjetoCRUD projetoCRUD = new CadastroProjetoCRUD();
+        		model.Projeto projeto = new model.Projeto();
+        		projeto.setDataDeCriacao(jTextField1.getText().toString());
+        		projeto.setDescricaoGeral(jTextField2.getText().toString());
+        		projeto.setDataDeFinalizacao(jTextField3.getText().toString());
+        		projetoCRUD.cadastroProjeto(projeto);
+        	}
+        });
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();

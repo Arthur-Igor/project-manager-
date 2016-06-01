@@ -41,6 +41,14 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setAutoRequestFocus(false);
+        setFocusCycleRoot(false);
+        setFocusable(false);
+        setFocusableWindowState(false);
+        setLocationByPlatform(true);
+        setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -112,7 +120,11 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        getAccessibleContext().setAccessibleName("Tela Principal");
+        getAccessibleContext().setAccessibleDescription("");
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void itenMenuCadastroProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itenMenuCadastroProjetoActionPerformed
@@ -120,7 +132,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_itenMenuCadastroProjetoActionPerformed
 
     private void itenMenuCadastroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itenMenuCadastroUsuarioActionPerformed
-       
+                Tela frame = new Tela();  
+                frame.setVisible(true);
+                
+
     }//GEN-LAST:event_itenMenuCadastroUsuarioActionPerformed
 
     /**
